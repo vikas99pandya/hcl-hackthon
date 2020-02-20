@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ing.models.ProductDetails;
-import com.ing.product.ProductService;
 
 @RestController
 public class ProductDetailsController {
