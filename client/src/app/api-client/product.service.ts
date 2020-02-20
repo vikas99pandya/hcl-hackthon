@@ -75,16 +75,16 @@ export class ProductService {
     private httpClient: HttpClient
   ) { }
 
-  getProductGroups(): void {}
+  getProductGroups(): void {
+    this.productGroups$ = this.httpClient.get<ProductGroupModel[]>(`/productGroups`);
+  }
 
-  getSavigsProducts(): void {}
-
-  getPaymentsProducts(): void {}
-
-  getMortgageProducts(): void {}
+  getProductsByGroupId(groupId: string): Observable<ProductGroupModel[]> {
+    return this.httpClient.get<ProductGroupModel[]>(`products/${groupId}`)
+  }
 
   getProductDetails(id: string): void {
-    //this.currentProduct$ = this.httpClient.get<ProductDetailModel>(`products/${id}`);
+    this.currentProduct$ = this.httpClient.get<ProductDetailModel>(`productDetails/${id}`);
   }
 
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/api-client/product.service';
 import { ProductModel } from 'src/app/api-client/models/product.model';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'product-summary',
@@ -10,16 +11,11 @@ import { Observable } from 'rxjs';
 })
 export class ProductSummaryComponent implements OnInit {
 
-  savings$: Observable<ProductModel[]>;
-
   constructor(
     private service: ProductService
   ) { }
 
   ngOnInit(): void {
-    this.service.getSavigsProducts();
-    this.service.getPaymentsProducts();
-    this.service.getMortgageProducts();
+    this.service.getProductGroups();
   }
-
 }
