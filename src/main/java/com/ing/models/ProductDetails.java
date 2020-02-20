@@ -1,32 +1,40 @@
 package com.ing.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="product_details")
 public class ProductDetails {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="id")
 	private int id;
-	private String name;
-	private double balance;
-	private String description;
+	@Column(name="account")
+	private String account;
+	@Column(name="balance")
+	private int balance;
+	@Column(name="number_of_hits")
+	private int numberOfHits;
 	@OneToOne
+	@JoinColumn(name="product_id")
 	private Product product;
 	
 	public ProductDetails() {
 	}
 	
-	public ProductDetails(int id, String name, double balance, String description, int productId) {
+	public ProductDetails(int id, String account, int balance, int productId) {
 		super();
 		this.id = id;
-		this.name = name;
+		this.account = account;
 		this.balance = balance;
-		this.description = description;
 		this.product = new Product(id, "", 0, 0);
 	}
 	public int getId() {
@@ -35,23 +43,28 @@ public class ProductDetails {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
+
 	public double getBalance() {
 		return balance;
 	}
-	public void setBalance(double balance) {
+	public void setBalance(int balance) {
 		this.balance = balance;
 	}
-	public String getDescription() {
-		return description;
+
+	public String getAccount() {
+		return account;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+
+	public void setAccount(String account) {
+		this.account = account;
+	}
+
+	public int getNumberOfHits() {
+		return numberOfHits;
+	}
+
+	public void setNumberOfHits(int numberOfHits) {
+		this.numberOfHits = numberOfHits;
 	}
 
 	public Product getProduct() {

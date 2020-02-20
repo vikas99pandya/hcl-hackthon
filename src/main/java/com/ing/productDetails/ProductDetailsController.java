@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ing.models.ProductDetails;
 import com.ing.product.ProductService;
 
+import java.util.List;
+
 @RestController
 public class ProductDetailsController {
 	
@@ -15,7 +17,7 @@ public class ProductDetailsController {
 	private ProductService productService;
 	
 	@GetMapping("/productDetails/{id}")
-	public ProductDetails getProductDetails(@PathVariable int id) {
+	public List<ProductDetails> getProductDetails(@PathVariable int id) {
 		return productService.getProductDetails(id);
 	}
 }

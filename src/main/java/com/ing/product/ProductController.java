@@ -30,9 +30,10 @@ public class ProductController {
     }
     
     @GetMapping("/products/{groupId}")
-    public List<Product> getProduc(@PathVariable int groupId) {
+    public List<Product> getProduct(@PathVariable int groupId) {
     	return productService.getProducts(groupId);
     }
+
     
 
 }

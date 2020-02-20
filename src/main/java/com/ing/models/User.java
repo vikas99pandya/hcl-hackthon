@@ -1,20 +1,27 @@
 package com.ing.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.apache.bcel.generic.SIPUSH;
 
 @Entity
+@Table(name="user")
 public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="id")
 	private int id;
-	private String name;
+	@Column(name="number_of_logins")
+	private int numberOfLogins;
+	@Column(name="username")
 	private String userName;
+	@Column(name="password")
 	private String password;
 	
 	
@@ -22,9 +29,13 @@ public class User {
 	public User(int id, String name, String userName, String password) {
 		super();
 		this.id = id;
-		this.name = name;
+		this.userName = name;
 		this.userName = userName;
 		this.password = password;
+	}
+
+	public User(){
+
 	}
 
 	public int getId() {
@@ -33,12 +44,15 @@ public class User {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+
+	public int getNumberOfLogins() {
+		return numberOfLogins;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public void setNumberOfLogins(int numberOfLogins) {
+		this.numberOfLogins = numberOfLogins;
 	}
+
 	public String getUserName() {
 		return userName;
 	}
