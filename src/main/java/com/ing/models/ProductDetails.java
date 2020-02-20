@@ -53,6 +53,13 @@ public class ProductDetails {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+	public Product getProduct() {
+		return product;
+	}
+	public void setProduct(Product product) {
+		this.product = product;
+	}
 	
 	
 }
