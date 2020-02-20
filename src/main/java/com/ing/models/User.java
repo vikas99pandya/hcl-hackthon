@@ -17,12 +17,16 @@ public class User {
 	private String userName;
 	private String password;
 	
-	public User(String name, String userName, String password) {
+	
+	
+	public User(int id, String name, String userName, String password) {
+		super();
+		this.id = id;
 		this.name = name;
 		this.userName = userName;
 		this.password = password;
 	}
-	
+
 	public int getId() {
 		return id;
 	}

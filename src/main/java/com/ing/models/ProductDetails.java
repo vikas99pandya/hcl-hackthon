@@ -1,9 +1,12 @@
 package com.ing.models;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
+@Entity
 public class ProductDetails {
 
 	@Id
@@ -12,13 +15,19 @@ public class ProductDetails {
 	private String name;
 	private double balance;
 	private String description;
+	@OneToOne
+	private Product product;
 	
-	public ProductDetails(int id, String name, double balance, String description) {
+	public ProductDetails() {
+	}
+	
+	public ProductDetails(int id, String name, double balance, String description, int productId) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.balance = balance;
 		this.description = description;
+		this.product = new Product(id, "", 0, 0);
 	}
 	public int getId() {
 		return id;

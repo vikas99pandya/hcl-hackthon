@@ -13,6 +13,8 @@ public interface ProductService {
 	List<ProductGroup> getAllProductGroups();
 
 	List<Product> getProducts(int groupId);
+
+	ProductDetails getProductDetails(int id);
 	
 	
 }

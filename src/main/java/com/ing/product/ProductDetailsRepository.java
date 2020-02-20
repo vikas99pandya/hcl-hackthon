@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.ing.models.Product;
+import com.ing.models.ProductDetails;
 
 @Repository
-public interface ProductRepository extends JpaRepository<Product, Integer>{
-	List<Product> findByGroupId(Integer groupId);
+public interface ProductDetailsRepository extends JpaRepository<ProductDetails, Integer>{
+	List<ProductDetails> findByProductId(int productId);
 }

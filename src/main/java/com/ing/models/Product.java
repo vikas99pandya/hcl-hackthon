@@ -1,10 +1,12 @@
 package com.ing.models;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+@Entity
 public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,7 +17,13 @@ public class Product {
 	@ManyToOne
 	private ProductGroup group;
 	
-	
+	public Product(int id, String name, int userId, int groupId) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.user = new User(userId, "", "", "");
+		this.group = new ProductGroup(groupId, "");
+	}
 	
 	public int getId() {
 		return id;
