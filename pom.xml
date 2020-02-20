@@ -3,8 +3,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.mycomp</groupId>
-  <artifactId>myproj</artifactId>
+  <groupId>org.ing</groupId>
+  <artifactId>user-account-api</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -18,7 +18,7 @@
     <easymock.version>3.4</easymock.version>
     <docker.image.prefix>myproj-docker</docker.image.prefix>
     <buildtag>0.0.1-SNAPSHOT</buildtag>
-    <registry.url>135833459134.dkr.ecr.eu-west-1.amazonaws.com/eherkenning_ad</registry.url>
+    <registry.url>${project.basedir}\src\main\resources</registry.url>
   </properties>
 
   <dependencies>
@@ -161,7 +161,7 @@
               <jvmFlag>-Xms256m</jvmFlag>
               <jvmFlag>-Xmx512m</jvmFlag>
             </jvmFlags>
-            <mainClass>com.mycomp.MyProjApp</mainClass>
+            <mainClass>com.ing.UserAccountApp</mainClass>
             <ports>
               <port>8080</port>
             </ports>

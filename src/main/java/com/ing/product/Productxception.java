@@ -1,6 +1,6 @@
-package com.mycomp.exception;
+package com.ing.product;
 
-public class MyAppException extends Exception {
+public class Productxception extends Exception {
 
     private static final long serialVersionUID = -4908881206111894083L;
 
@@ -14,7 +14,7 @@ public class MyAppException extends Exception {
      * @param cause a cause for the exception
      * @param errorCode a Error code for the exception
      */
-    public MyAppException(String message, Throwable cause, String errorCode) {
+    public Productxception(String message, Throwable cause, String errorCode) {
         super(message, cause);
         this.errorCode = errorCode;
     }
