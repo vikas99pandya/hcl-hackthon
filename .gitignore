@@ -17,3 +17,5 @@ logback-test.xml
 dependency-reduced-pom.xml
 # jvm dumps
 hs_err_pid*.log
+**/node_modules/
+**/.vscode/
