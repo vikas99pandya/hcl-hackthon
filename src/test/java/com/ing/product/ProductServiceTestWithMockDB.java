@@ -11,6 +11,8 @@ import com.ing.service.ProductService;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
@@ -41,6 +43,8 @@ public class ProductServiceTestWithMockDB {
     @Autowired
     private ProductGroupRepository productGroupRepository;
 
+    private static final Logger LOG = LoggerFactory.getLogger(ProductServiceTestWithMockDB.class);
+
 
     @Test
     public void checkAllProdGroup(){
@@ -51,7 +55,8 @@ public class ProductServiceTestWithMockDB {
             Assert.assertEquals(prodGrpList.size(),3);
         }
         catch(UserProductException ex){
-            ////////
+            LOG.error("error in test",ex);
+            ////////ignore: never goes here
         }
     }
 
@@ -64,7 +69,22 @@ public class ProductServiceTestWithMockDB {
             Assert.assertEquals(prodDataList.size(),3);
         }
         catch(UserProductException ex){
-            ////////
+            LOG.error("error in test",ex);
+            ////////ignore: never goes here
+        }
+    }
+
+    @Test
+    public void checkNoProducts(){
+
+        try {
+            List<ProductDTO> prodDataList = fixture.getProducts(2);
+            Assert.assertNotNull(prodDataList);
+            Assert.assertEquals(prodDataList.size(),0);
+        }
+        catch(UserProductException ex){
+            LOG.error("error in test",ex);
+            //////// ignore: never goes here
         }
     }
 
@@ -79,7 +99,22 @@ public class ProductServiceTestWithMockDB {
             Assert.assertEquals(prodDetailList.get(0).getProductName(),"Orange savings account");
         }
         catch(UserProductException ex){
-            ////////
+            LOG.error("error in test",ex);
+            ////////ignore: never goes here
+        }
+    }
+
+    @Test
+    public void checkNoProductDetails(){
+
+        try {
+            List<ProductDetailsDTO>  prodDetailList = fixture.getProductDetails(7);
+            Assert.assertNotNull(prodDetailList);
+            Assert.assertEquals(prodDetailList.size(),0);
+        }
+        catch(UserProductException ex){
+            LOG.error("error in test",ex);
+            ////////ignore: never goes here
         }
     }
 
