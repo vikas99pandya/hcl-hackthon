@@ -13,7 +13,6 @@
   </parent>
 
   <properties>
-    <opensaml.version>3.2.0</opensaml.version>
     <spring.test.version>5.2.1.RELEASE</spring.test.version>
     <easymock.version>3.4</easymock.version>
     <docker.image.prefix>myproj-docker</docker.image.prefix>
