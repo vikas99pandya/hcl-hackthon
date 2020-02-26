@@ -16,16 +16,10 @@ INSERT INTO product (id, name, user_id, product_group_id) values (5, 'Child savi
 INSERT INTO product (id, name, user_id, product_group_id) values (6, 'Orange savings account', 3, 1);
 
 
-INSERT INTO product_details (id, product_id, account, balance,number_of_hits)
-values (1, 1, 'NL21INGB1234567890', 3456.34, 0);
-INSERT INTO product_details (id, product_id, account, balance,number_of_hits)
-values (2, 2, 'NL21INGB2234567890', 4456.34, 0);
-INSERT INTO product_details (id, product_id, account, balance,number_of_hits)
-values (3, 3, 'NL21INGB3234567890', 5456.34, 0);
-INSERT INTO product_details (id, product_id, account, balance,number_of_hits)
-values (4, 4, 'NL21INGB4234567890', 6456.34, 0);
-INSERT INTO product_details (id, product_id, account, balance,number_of_hits)
-values (5, 5, 'NL21INGB5234567890', 7456.34, 0);
-INSERT INTO product_details (id, product_id, account, balance,number_of_hits)
-values (6, 6, 'NL21INGB6234567890', 8456.34, 0);
+INSERT INTO product_details (id, product_id, account, balance,number_of_hits) values (1, 1, 'NL21INGB1234567890', 3456, 0);
+INSERT INTO product_details (id, product_id, account, balance,number_of_hits) values (2, 2, 'NL21INGB2234567890', 4456, 0);
+INSERT INTO product_details (id, product_id, account, balance,number_of_hits) values (3, 3, 'NL21INGB3234567890', 5456, 0);
+INSERT INTO product_details (id, product_id, account, balance,number_of_hits) values (4, 4, 'NL21INGB4234567890', 6456, 0);
+INSERT INTO product_details (id, product_id, account, balance,number_of_hits) values (5, 5, 'NL21INGB5234567890', 7456, 0);
+INSERT INTO product_details (id, product_id, account, balance,number_of_hits) values (6, 6, 'NL21INGB6234567890', 8456, 0);
 commit;

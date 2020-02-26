@@ -1,4 +1,4 @@
-package com.ing.product;
+package com.ing.user;
 
 import com.ing.dao.UserRepository;
 import com.ing.dto.UserDTO;
